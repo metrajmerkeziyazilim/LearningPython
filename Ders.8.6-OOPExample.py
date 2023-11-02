@@ -1,5 +1,4 @@
 """Question"""
-import random
 
 
 class Question:
@@ -9,14 +8,13 @@ class Question:
         self.answer = answer
 
     def checkAnswer(self, answer):
-        if answer not in self.choices:
-            raise ValueError("hatalı bilgi")
         return self.answer == answer
 
 
 class Quiz:
     def __init__(self, questions):
-        self.questions = random.sample(questions, len(questions))
+        self.questions = questions
+        self.score = 0
         self.questionIndex = 0
 
     def getQuestion(self):
@@ -24,11 +22,14 @@ class Quiz:
 
     def displayQuestion(self):
         question = self.getQuestion()
-
-        print(f"Soru {self.questionIndex + 1}: {question.text}")
+        print(f"Soru {self.questionIndex+1}: {question.text}")
 
         for q in question.choices:
-            print("-" + q)
+            print(" - " + q)
+
+        answer = input("Cevabınız ... ?")
+        self.guess(answer)
+        self.loadQuestion()
 
     def guess(self, answer):
         question = self.getQuestion()
@@ -37,13 +38,24 @@ class Quiz:
             self.score += 1
         self.questionIndex += 1
 
-        self.displayQuestion()
-
     def loadQuestion(self):
         if len(self.questions) == self.questionIndex:
             self.showScore()
         else:
+            self.displayProgress()
             self.displayQuestion()
+
+    def showScore(self):
+        print("Skorunuz:", self.score)
+
+    def displayProgress(self):
+        totalQuestion = len(self.questions)
+        questionNumber = self.questionIndex + 1
+
+        if questionNumber > totalQuestion:
+            print("Tebrikler Quiz Bitti")
+        else:
+            print(f"Question {questionNumber} of {totalQuestion}".center(100, "*"))
 
 
 q1 = Question(
@@ -63,16 +75,8 @@ q3 = Question(
     "Python",
 )
 
-liste = [q1, q2, q3]
 questions = [q1, q2, q3]
 
+
 quiz = Quiz(questions)
-question = quiz.getQuestion()
-
-question = quiz.questions[quiz.questionIndex]
-
-""" print(question)
-
-print(question.text) """
-
-quiz.displayQuestion()
+quiz.loadQuestion()
