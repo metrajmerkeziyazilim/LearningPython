@@ -56,22 +56,22 @@ class MainForm(QMainWindow):
         self.lbl_toplamaSonuc = QtWidgets.QLabel(self)
         self.lbl_toplamaSonuc.setText("Sonuç:")
         self.lbl_toplamaSonuc.move(150, 290)
-        self.lbl_toplamaSonuc.setFixedWidth(300)  # Genişliği 300 piksel olarak ayarla
+        self.lbl_toplamaSonuc.setFixedWidth(500)  # Genişliği 300 piksel olarak ayarla
 
         self.lbl_cikarmaSonuc = QtWidgets.QLabel(self)
         self.lbl_cikarmaSonuc.setText("Sonuç:")
         self.lbl_cikarmaSonuc.move(150, 330)
-        self.lbl_cikarmaSonuc.setFixedWidth(300)  # Genişliği 300 piksel olarak ayarla
+        self.lbl_cikarmaSonuc.setFixedWidth(500)  # Genişliği 300 piksel olarak ayarla
 
         self.lbl_carpmaSonuc = QtWidgets.QLabel(self)
         self.lbl_carpmaSonuc.setText("Sonuç:")
         self.lbl_carpmaSonuc.move(150, 370)
-        self.lbl_carpmaSonuc.setFixedWidth(300)  # Genişliği 300 piksel olarak ayarla
+        self.lbl_carpmaSonuc.setFixedWidth(500)  # Genişliği 300 piksel olarak ayarla
 
         self.lbl_bolmeSonuc = QtWidgets.QLabel(self)
         self.lbl_bolmeSonuc.setText("Sonuç:")
         self.lbl_bolmeSonuc.move(150, 410)
-        self.lbl_bolmeSonuc.setFixedWidth(300)  # Genişliği 300 piksel olarak ayarla
+        self.lbl_bolmeSonuc.setFixedWidth(500)  # Genişliği 300 piksel olarak ayarla
 
     def hesaplama(self):
         sender = self.sender().text()
