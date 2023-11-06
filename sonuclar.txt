@@ -1,8 +1,0 @@
-Öğrenci Adı:   Soyadı:    Öğrenci Harf Notu:
-    Hikmet      Yılmaz             CC
-Öğrenci Adı:   Soyadı:    Öğrenci Harf Notu:
-    Bahattin      Sönmez             BA
-Öğrenci Adı:   Soyadı:    Öğrenci Harf Notu:
-    aHMET      Mehmet             CC
-Öğrenci Adı:   Soyadı:    Öğrenci Harf Notu:
-    Bekir      Sönmez             CC

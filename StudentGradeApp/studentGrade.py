@@ -39,7 +39,7 @@ def not_hesapla(satir):
 
 
 def ortalamalari_oku():
-    with open("sinav_notlari.txt", "r", encoding="utf-8") as file:
+    with open("StudentGradeApp/sinav_notlari.txt", "r", encoding="utf-8") as file:
         for satir in file:
             print(not_hesapla(satir))
 
@@ -51,26 +51,26 @@ def not_gir():
     not2 = input("Not-2:")
     not3 = input("Not-3:")
 
-    with open("sinav_notlari.txt", "a", encoding="utf-8") as file:
+    with open("StudentGradeApp/sinav_notlari.txt", "a", encoding="utf-8") as file:
         file.write(ad + " " + soyad + ":" + not1 + "," + not2 + "," + not3 + "\n")
 
 
 def notlari_kayitet():
-    with open("sinav_notlari.txt", "r", encoding="utf-8") as file:
+    with open("StudentGradeApp/sinav_notlari.txt", "r", encoding="utf-8") as file:
         liste = []
         for i in file:
             liste.append(not_hesapla(i))
 
-        with open("sonuclar.txt", "w", encoding="utf-8") as file2:
+        with open("StudentGradeApp/sonuclar.txt", "w", encoding="utf-8") as file2:
             for i in liste:
                 file2.write(i)
 
 
 def kayit_sil(ogrenci_adi):
-    with open("sinav_notlari.txt", "r", encoding="utf-8") as file:
+    with open("StudentGradeApp/sinav_notlari.txt", "r", encoding="utf-8") as file:
         lines = file.readlines()
 
-    with open("sinav_notlari.txt", "w", encoding="utf-8") as file:
+    with open("StudentGradeApp/sinav_notlari.txt", "w", encoding="utf-8") as file:
         for line in lines:
             if not line.startswith(ogrenci_adi):
                 file.write(line)
