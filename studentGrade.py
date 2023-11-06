@@ -66,10 +66,33 @@ def notlari_kayitet():
                 file2.write(i)
 
 
+def kayit_sil(ogrenci_adi):
+    with open("sinav_notlari.txt", "r", encoding="utf-8") as file:
+        lines = file.readlines()
+
+    with open("sinav_notlari.txt", "w", encoding="utf-8") as file:
+        for line in lines:
+            if not line.startswith(ogrenci_adi):
+                file.write(line)
+
+
+def kayit_silme_sor():
+    ogrenci_adi = input("Silmek İstediğiniz Öğrencinin Adını Giriniz: ")
+    confirmation = input(
+        f"{ogrenci_adi} adlı öğrencinin kayıtlarını silmek istediğinize emin misiniz? "
+    )
+
+    if confirmation.lower() == "y":
+        kayit_sil(ogrenci_adi)
+        print(f"{ogrenci_adi} Adlı Öğrenci Başarıyla Silindi.")
+    else:
+        print(f"{ogrenci_adi} Adlı Öğrencinin Kaydı Silinemedi")
+
+
 """Döngü İşlemlerinin Yapıldığı Yer"""
 while True:
     islem = input(
-        "1- Notları Oku: \n2- Not Gir: \n3- Notları Kayıt Et: \n4- Çıkış Yap: "
+        "1- Notları Oku: \n2- Not Gir: \n3- Notları Kayıt Et: \n4- Kayıt Sil: \n5- Çıkış Yap: "
     )
 
     if islem == "1":
@@ -78,5 +101,7 @@ while True:
         not_gir()
     elif islem == "3":
         notlari_kayitet()
+    elif islem == "4":
+        kayit_silme_sor()
     else:
         break
