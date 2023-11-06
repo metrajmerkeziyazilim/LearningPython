@@ -1,0 +1,6 @@
+Öğrenci Adı:   Soyadı:    Öğrenci Harf Notu:
+    Fikret      Akbaş             FF
+Öğrenci Adı:   Soyadı:    Öğrenci Harf Notu:
+    Hikmet      Yılmaz             CC
+Öğrenci Adı:   Soyadı:    Öğrenci Harf Notu:
+    Bahattin      Sönmez             BA
